@@ -42,10 +42,9 @@ if (!mnemonic) {
 }
 
 const chainIds = {
+  local: 8387657069,
+  swafe: 8387657069,
   zama: 8009,
-  local: 9000,
-  localNetwork1: 9000,
-  multipleValidatorTestnet: 8009,
 };
 
 function getChainConfig(chain: keyof typeof chainIds): NetworkUserConfig {
@@ -54,11 +53,8 @@ function getChainConfig(chain: keyof typeof chainIds): NetworkUserConfig {
     case "local":
       jsonRpcUrl = "http://localhost:8545";
       break;
-    case "localNetwork1":
-      jsonRpcUrl = "http://127.0.0.1:9650/ext/bc/fhevm/rpc";
-      break;
-    case "multipleValidatorTestnet":
-      jsonRpcUrl = "https://rpc.fhe-ethermint.zama.ai";
+    case "swafe":
+      jsonRpcUrl = "http://localhost:8545";
       break;
     case "zama":
       jsonRpcUrl = "https://devnet.zama.ai";
@@ -138,11 +134,9 @@ const config: HardhatUserConfig = {
         path: "m/44'/60'/0'/0",
       },
     },
-    zama: getChainConfig("zama"),
-    localDev: getChainConfig("local"),
     local: getChainConfig("local"),
-    localNetwork1: getChainConfig("localNetwork1"),
-    multipleValidatorTestnet: getChainConfig("multipleValidatorTestnet"),
+    swafe: getChainConfig("swafe"),
+    zama: getChainConfig("zama"),
   },
   paths: {
     artifacts: "./artifacts",

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-CHAINID="ethermint_9000-1"
-MONIKER="localtestnet"
-KEYRING="test"
+CHAINID="8387657069"
+MONIKER="swafe"
+KEYRING="swafe"
 KEYALGO="eth_secp256k1"
 HOME_ETHERMINTD="$HOME/.ethermintd"
 ETHERMINTD="ethermintd"

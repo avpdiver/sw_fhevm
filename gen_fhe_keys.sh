@@ -1,1 +1,0 @@
-./scripts/prepare_volumes_from_kms_core.sh v0.7.1 ./keys/network-fhe-keys ./keys/kms-fhe-keys

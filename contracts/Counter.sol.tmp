@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: BSD-3-Clause-Clear
+
+pragma solidity ^0.8.24;
+
+import "fhevm/lib/TFHE.sol";
+
+contract Counter {
+    euint32 private counter = TFHE.asEuint32(0);
+
+    function add(uint32 amount) public {
+        euint32 value = TFHE.asEuint32(amount);
+        counter = TFHE.add(counter, value);
+    }
+}
